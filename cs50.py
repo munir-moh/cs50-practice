@@ -1,4 +1,4 @@
-# Lecture 0 – Python Basics
+# LECTURE 0 – Python Basics
 
 
 # 1. Creating Code with Python
@@ -118,3 +118,147 @@ def square(x):
 result = square(6)
 print("Square is:", result)
 
+
+
+#LECTURE 1
+# 1. Conditionals
+"""Conditionals allow you, the programmer, to allow your program to make decisions: As if your program has the choice between taking the left-hand road or the right-hand road based upon certain conditions.
+Conditionals allow your program to make decisions, choosing one path over another depending on specified conditions.
+Built within Python are a set of “operators” that are used to ask mathematical questions.
+> and < symbols are probably quite familiar to you.
+>= denotes “greater than or equal to.”
+<= denotes “less than or equal to.”
+== denotes “equals.” Note the double equal sign: a single equal sign assigns a value, whereas two equal signs compare values.
+!= denotes “not equal to.”
+Conditional statements compare a left-hand term to a right-hand term."""
+
+#if Statements
+#if statements use bool (Boolean) values (True or False) to decide whether or not to execute code. If the comparison x > y is True, the interpreter runs the indented block.
+
+x = int(input("What's x? "))
+y = int(input("What's y? "))
+
+if x < y:
+    print("x is less than y")
+
+#Control Flow, elif, and else
+x = int(input("What's x? "))
+y = int(input("What's y? "))
+
+if x < y:
+    print("x is less than y")
+elif x > y:
+    print("x is greater than y")
+else:
+    print("x is equal to y")
+
+# 'or' allows your program to decide between one or more alternatives. For example, 
+x = int(input("What's x? "))
+y = int(input("What's y? "))
+
+if x < y or x > y:
+    print("x is not equal to y")
+else:
+    print("x is equal to y")
+
+# 'and' Similar to or, and can be used within conditional statements. For example,
+score = int(input("Score: "))
+
+if score >= 90 and score <= 100:
+    print("Grade: A")
+elif score >=80 and score < 90:
+    print("Grade: B")
+elif score >=70 and score < 80:
+    print("Grade: C")
+elif score >=60 and score < 70:
+    print("Grade: D")
+else:
+    print("Grade: F")
+
+# Modulus
+#The modulo % operator in programming allows one to see if two numbers divide evenly or divide and have a remainder. For example, 10 % 3 is 1 because 10 divided by 3 is 3 with a remainder of 1.
+x = int(input("What's x? "))
+
+if x % 2 == 0:
+    print("Even")
+else:
+    print("Odd")
+
+#Creating Our Own Parity Function
+def main():
+    x = int(input("What's x? "))
+    if is_even(x):
+        print("Even")
+    else:
+        print("Odd")
+
+def is_even(n):
+    if n % 2 == 0:
+        return True
+    else:
+        return False
+
+main()
+
+#Pythonic
+#In the programming world, there are types of programming that are called “Pythonic” in nature. That is, there are ways to program that are sometimes only seen in Python programming
+
+#match
+"""Similar to if, elif, and else statements, match statements can be used to conditionally run code that matches certain values.
+Consider the following program:
+"""
+
+name = input("What's your name? ")
+
+if name == "Harry":
+  print("Gryffindor")
+elif name == "Hermione":
+  print("Gryffindor")
+elif name == "Ron": 
+  print("Gryffindor")
+elif name == "Draco":
+  print("Slytherin")
+else:
+  print("Who?")
+#Notice the first three conditional statements print the same response.
+
+#We can improve this code slightly with the use of the or keyword:
+  name = input("What's your name? ")
+
+if name == "Harry" or name == "Hermione" or name == "Ron": 
+  print("Gryffindor")
+elif name == "Draco":
+  print("Slytherin")
+else:
+  print("Who?")
+#Notice the number of elif statements has decreased, improving the readability of our code.
+
+#Alternatively, we can use match statements to map names to houses. Consider the following code:
+  name = input("What's your name? ")
+
+  match name: 
+      case "Harry":
+          print("Gryffindor")
+      case "Hermione":
+          print("Gryffindor")
+      case "Ron": 
+          print("Gryffindor")
+      case "Draco":
+          print("Slytherin")
+      case _:
+          print("Who?")
+#Notice the use of the _ symbol in the last case. This will match with any input, resulting in similar behavior as an else statement.
+
+"""A match statement compares the value following the match keyword with each of the values following the case keywords. In the event a match is found, the respective indented code section is executed, and the program stops the matching.
+We can improve the code:
+"""
+  name = input("What's your name? ")
+
+  match name: 
+      case "Harry" | "Hermione" | "Ron":
+          print("Gryffindor")
+      case "Draco":
+          print("Slytherin")
+      case _:
+          print("Who?")
+#Notice, the use of the single vertical bar |. Much like the or keyword, this allows us to check for multiple values in the same case statement.
