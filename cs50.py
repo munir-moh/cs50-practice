@@ -262,3 +262,130 @@ We can improve the code:
       case _:
           print("Who?")
 #Notice, the use of the single vertical bar |. Much like the or keyword, this allows us to check for multiple values in the same case statement.
+
+#LECTURE 2
+```python
+# ================================
+# Python Lecture Notes
+# ================================
+# Topic: Loops, Control Statements, Lists, Lengths, Dictionaries
+# Simple explanations with examples
+# ================================
+
+
+# --------------------------------
+# 1. WHILE LOOP
+# --------------------------------
+# A while loop keeps running as long as its condition is True.
+
+count = 1
+while count <= 5:
+    print("Count is:", count)
+    count += 1  # increase count so the loop eventually ends
+
+# Output:
+# Count is: 1
+# Count is: 2
+# Count is: 3
+# Count is: 4
+# Count is: 5
+
+
+# --------------------------------
+# 2. FOR LOOP
+# --------------------------------
+# A for loop is used to iterate over a sequence (like a list, string, or range).
+
+for i in range(1, 6):
+    print("Number:", i)
+
+# Output:
+# Number: 1
+# Number: 2
+# Number: 3
+# Number: 4
+# Number: 5
+
+
+
+# 3. CONTINUE
+# 'continue' skips the current iteration and moves to the next.
+
+for num in range(1, 6):
+    if num == 3:
+        continue 
+    print(num)
+
+
+# 4. BREAK
+# 'break' stops the loop completely.
+
+for num in range(1, 6):
+    if num == 4:
+        break  
+    print(num)
+
+
+# 5. PASS
+# 'pass' does nothing. It is used as a placeholder.
+
+for num in range(1, 6):
+    if num == 3:
+        pass  
+    print("Number:", num)
+
+
+
+
+# 6. LISTS
+# A list is a collection of items in a particular order.
+
+fruits = ["apple", "banana", "cherry"]
+print(fruits)
+
+# Accessing items
+print(fruits[0])  
+print(fruits[1])   
+# Adding items
+fruits.append("orange")
+print(fruits)  
+
+# Removing items
+fruits.remove("banana")
+print(fruits) 
+
+
+# 7. LENGTH
+
+numbers = [10, 20, 30, 40, 50]
+print("Length of numbers list:", len(numbers)) 
+
+
+# 8. DICTIONARIES
+# A dictionary is a collection of key-value pairs.
+
+student = {
+    "name": "Alice",
+    "age": 21,
+    "course": "Computer Science"
+}
+
+print(student)
+
+# Access values
+print(student["name"])  
+print(student["age"])   
+
+# Add new key-value pair
+student["level"] = "200"
+print(student)
+
+# Remove a key-value pair
+del student["course"]
+print(student)
+
+# Loop through keys and values
+for key, value in student.items():
+    print(key, ":", value)
+
+
