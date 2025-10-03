@@ -264,18 +264,8 @@ We can improve the code:
 #Notice, the use of the single vertical bar |. Much like the or keyword, this allows us to check for multiple values in the same case statement.
 
 #LECTURE 2
-```python
-# ================================
-# Python Lecture Notes
-# ================================
-# Topic: Loops, Control Statements, Lists, Lengths, Dictionaries
-# Simple explanations with examples
-# ================================
 
-
-# --------------------------------
 # 1. WHILE LOOP
-# --------------------------------
 # A while loop keeps running as long as its condition is True.
 
 count = 1
@@ -283,28 +273,12 @@ while count <= 5:
     print("Count is:", count)
     count += 1  # increase count so the loop eventually ends
 
-# Output:
-# Count is: 1
-# Count is: 2
-# Count is: 3
-# Count is: 4
-# Count is: 5
 
-
-# --------------------------------
 # 2. FOR LOOP
-# --------------------------------
 # A for loop is used to iterate over a sequence (like a list, string, or range).
 
 for i in range(1, 6):
     print("Number:", i)
-
-# Output:
-# Number: 1
-# Number: 2
-# Number: 3
-# Number: 4
-# Number: 5
 
 
 
