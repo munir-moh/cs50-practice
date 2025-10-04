@@ -384,6 +384,7 @@ except ValueError:
 print(f"x is {x}")
 #In this code, we attempt to convert user input into an integer. If the user inputs something that cannot be converted into an integer, a ValueError is raised, and the code within the except block is executed.
 
+
 #3. else
 #It turns out that there is another way to implement try that could catch errors of this nature.
 try:
@@ -393,3 +394,33 @@ except ValueError:
 else:
     print(f"x is {x}")
 #In this code, if the user inputs something that cannot be converted into an integer, a ValueError is raised, and the code within the except block is executed. However, if no error is raised, the code within the else block is executed.
+
+
+#Consider how we can use a loop to prompt the user for x and if they don’t prompt again!
+while True:
+    try:
+        x = int(input("What's x?"))
+    except ValueError:
+        print("x is not an integer")
+    else:
+        break
+
+print(f"x is {x}")
+#In this code, we use a while True loop to continually prompt the user for input until they provide a valid integer. If a ValueError is raised, we inform the user and prompt again. If no error is raised, we break out of the loop and print the value of x.
+
+
+#We can make it such that our code does not warn our user, but simply re-asks them our prompting question using 'pass'.
+def main():
+    x = get_int()
+    print(f"x is {x}")
+
+
+def get_int():
+    while True:
+        try:
+            return int(input("What's x?"))
+        except ValueError:
+            pass
+
+
+main()
