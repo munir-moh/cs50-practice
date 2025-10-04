@@ -363,3 +363,33 @@ for key, value in student.items():
     print(key, ":", value)
 
 
+
+#LECTURE 3
+#1. Exceptions
+"""Exceptions are things that go wrong within our coding.
+Exceptions are problems that arise while your program is running.
+Syntax errors generally mean you should double-check that you typed your code correctly."""
+
+#2. Runtime Errors
+#Runtime errors refer to those created by unexpected behavior within your code. For example, perhaps you intended for a user to input a number, but they input a character instead. Your program may throw an error because of this unexpected input from the user.
+
+#3. try
+#In Python try and except are ways of testing out user input before something goes wrong. 
+#For example, consider the following code:
+try:
+    x = int(input("What's x?"))
+except ValueError:
+    print("x is not an integer")
+
+print(f"x is {x}")
+#In this code, we attempt to convert user input into an integer. If the user inputs something that cannot be converted into an integer, a ValueError is raised, and the code within the except block is executed.
+
+#3. else
+#It turns out that there is another way to implement try that could catch errors of this nature.
+try:
+    x = int(input("What's x?"))
+except ValueError:
+    print("x is not an integer")
+else:
+    print(f"x is {x}")
+#In this code, if the user inputs something that cannot be converted into an integer, a ValueError is raised, and the code within the except block is executed. However, if no error is raised, the code within the else block is executed.
