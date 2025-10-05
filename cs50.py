@@ -447,6 +447,44 @@ print(random.choice(['apple', 'banana', 'cherry']))
 # this will print a random fruit from the list
 
 #3. statis
+#Python comes with a built-in statistics library. How might we use this module?
 #The statistics module in Python provides functions for calculating mathematical statistics of numeric data.
-Python comes with a built-in statistics library. How might we use this module?
-mean is a function of this library that is quite useful.
+#For example, mean is a function of this library that is quite useful.
+
+import statistics
+print(statistics.mean([1, 2, 3, 4, 5]))
+# this will print the mean (average) of the list of numbers
+
+#4. sys
+#The sys module in Python provides access to some variables used or maintained by the interpreter and to functions that interact strongly with the interpreter.
+#For example, sys.argv is a list in Python, which contains the command-line arguments passed to the script.
+
+import sys
+
+try:
+    print("hello, my name is", sys.argv[1])
+except IndexError:
+    print("Too few arguments")
+# If you run this script from the command line with an argument, it will print that argument. If no argument is provided, it will catch the IndexError and print "Too few arguments".
+
+#5. slice
+#A slice in Python is a way to extract a portion of a sequence (like a string, list, or tuple) by specifying a start and end index.
+#For example, consider the following code:
+import sys
+
+if len(sys.argv) < 2:
+    sys.exit("Too few arguments")
+
+for arg in sys.argv:
+    print("hello, my name is", arg)
+
+#the interpreter will output not just the intended output of the names, but also hello, my name is cs50.py.
+
+
+#To avoid this, we can use a slice to skip the first element of sys.argv:
+import sys
+if len(sys.argv) < 2:
+    sys.exit("Too few arguments")
+for arg in sys.argv[1:]:
+    print("hello, my name is", arg)
+#In this code, sys.argv[1:] creates a slice of the sys.argv list that starts from index 1 and goes to the end of the list, effectively skipping the first element (the script name).
