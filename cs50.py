@@ -424,3 +424,29 @@ def get_int():
 
 
 main()
+
+
+#LECTURE 4
+#1. LIBRARIES
+"""Generally, libraries are bits of code written by you or others that you can use in your program.
+Python allows you to share functions or features with others as “modules”."""
+
+#2. Random
+#The random module in Python allows you to generate random numbers and make random selections.
+"""random is a library that comes with Python that you could import into your own project.
+It’s easier as a coder to stand on the shoulders of prior coders.
+So, how do you load a module into your own program? You can use the word import in your program
+for example:"""
+
+import random
+print(random.randint(1, 10))  
+# this will print a random integer between 1 and 10
+
+import random
+print(random.choice(['apple', 'banana', 'cherry']))
+# this will print a random fruit from the list
+
+#3. statis
+#The statistics module in Python provides functions for calculating mathematical statistics of numeric data.
+Python comes with a built-in statistics library. How might we use this module?
+mean is a function of this library that is quite useful.
