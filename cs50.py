@@ -487,4 +487,47 @@ if len(sys.argv) < 2:
     sys.exit("Too few arguments")
 for arg in sys.argv[1:]:
     print("hello, my name is", arg)
-#In this code, sys.argv[1:] creates a slice of the sys.argv list that starts from index 1 and goes to the end of the list, effectively skipping the first element (the script name).
+#In this code, sys.argv[1:] creates a slice of the sys.argv list starting from index 1 to the end, effectively skipping the first element (the script name). This way, only the names provided as arguments will be printed.
+
+#6. PACKAGES
+#A package in Python is a way of organizing related modules into a single directory hierarchy. Packages allow for a structured way to manage and distribute code.
+#pip is a package manager for Python that allows you to install and manage additional libraries and packages that are not included in the standard Python library.
+#cowsay is a well-known package that allows a cow to talk to the user.
+"""To install cowsay, you would typically run the following command in your terminal or command prompt:
+#pip install cowsay"""
+#for example:
+import cowsay
+import sys
+
+if len(sys.argv) == 2:
+    cowsay.cow("hello, " + sys.argv[1])
+
+#Notice that the program first checks that the user inputted at least two arguments at the command line. Then, the cow should speak to the user. 
+
+#7. MAKING YOUR OWN LIBRARIES
+#You can create your own libraries in Python by organizing your code into modules and packages. A module is simply a Python file (with a .py extension) that contains functions, classes, or variables that you want to reuse in other programs.
+#To create a module, you can follow these steps:
+#1. Create a new Python file (cs50.py) and define your functions.
+"""
+def hello(name):
+    print(f"hello, {name}")
+
+
+def goodbye(name):
+    print(f"goodbye, {name}")
+
+"""
+#we have created a module named module.py with two functions: hello and goodbye. and can use this module in another Python file (main.py) by importing it.
+#2. In another Python file (main.py), import the module and use its functions.
+"""
+import sys
+
+from cs50 import goodbye
+
+if len(sys.argv) == 2:
+    goodbye(sys.argv[1])
+
+"""
+
+#In this code, we import the goodbye function from the cs50 module and use it to say goodbye to the user based on the command-line argument provided.
+
